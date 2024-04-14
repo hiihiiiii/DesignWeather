@@ -7,42 +7,42 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="178dp"
-            android:layout_height="78dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtDay"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
+                android:gravity="center"
                 android:text="Sat 22/03/2024"
                 android:textAlignment="center"
-                android:gravity="center"
                 android:textColor="@color/text_color"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Clouds"
                 android:gravity="center"
+                android:text="Clouds"
                 android:textColor="@color/text_color"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <ImageView
             android:layout_width="90dp"
             android:layout_height="match_parent"
-            android:src="@drawable/cloudy_sunny" />
+            android:src="@drawable/cloudy_sunny"
+            android:id="@+id/img_status"/>
 
         <TextView
             android:id="@+id/txtMin"
@@ -51,7 +51,14 @@
             android:layout_gravity="center|center_horizontal"
             android:layout_weight="1"
             android:text="20"
-            android:textSize="25sp"/>
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
 
         <TextView
             android:id="@+id/txtMax"
@@ -60,7 +67,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="30"
-            android:textSize="25sp"/>
+            android:textSize="20sp"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.designweather;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgIcon;
     String City="";
 
+    ConnectionReceiver connectionReceiver;
+
+    IntentFilter intentFilter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,13 +62,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String city= edtSearch.getText().toString();
                 Intent intent= new Intent(MainActivity.this,SubActivity.class);
-                intent.putExtra("city",city);
+                intent.putExtra("City",city);
                 startActivity(intent);
             }
         });
+//        connectionReceiver= new ConnectionReceiver();
+//        intentFilter=new IntentFilter("com.example.designweather.SOME_ACTION");
+//        intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+//        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+//        registerReceiver(connectionReceiver,intentFilter);
     }
+
+
     public  void  GetCurrentWeatherData(String data) {
-        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + data + "&units=metric&appid=6d14d73aa1fa5ae8651b7c345af7a37a";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + data + "&units=metric&appid=bd5e378503939ddaee76f12ad7a97608";
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
